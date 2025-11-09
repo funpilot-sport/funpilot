@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.konfetti.funpilot",
+        "paths": [ "/joinevent", "/joinevent/*" ]
+      }
+    ]
+  }
+}
