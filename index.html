@@ -255,10 +255,13 @@
         function detectPlatform() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // iOS detection
+            // iOS detection (iPhone, iPod, and older iPads)
             const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
-            if (isIOS) {
+            // iPadOS 13+ detection (reports as Mac but has touch support)
+            const isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+
+            if (isIOS || isIPadOS) {
                 document.getElementById('ios-section').classList.add('active');
                 document.getElementById('android-section').classList.remove('active');
             } else {
